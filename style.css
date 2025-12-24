@@ -6,15 +6,10 @@
 }
 
 /* =========================
-   GLOBAL BACKGROUND (FIX)
+   SAFE BODY DEFAULT
    ========================= */
 body {
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("https://images.unsplash.com/photo-1611162617474-5b21e879e113");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #000;
 }
 
 /* =========================
@@ -54,10 +49,15 @@ body {
 }
 
 /* =========================
-   HERO (BACKGROUND REMOVED)
+   HERO (INDEX PAGE)
    ========================= */
 .hero {
   height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1611162617474-5b21e879e113");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +116,7 @@ body {
 }
 
 /* =========================
-   FEATURES (CARD STYLE)
+   FEATURES
    ========================= */
 .features {
   padding: 70px;
@@ -194,7 +194,7 @@ footer {
 }
 
 /* =========================
-   LOGIN PAGE
+   LOGIN / FORGOT / RESET
    ========================= */
 .login-bg {
   min-height: 100vh;
@@ -208,23 +208,77 @@ footer {
   justify-content: center;
 }
 
-/* =========================
-   DASHBOARD / SUPPORT /
-   FOLLOW BACK / ADMIN
-   (UNCHANGED LOGIC)
-   ========================= */
-
-.dashboard-bg,
-.support-container,
-.followback-container,
-.admin-container {
-  background: #f1f5f9;
+.login-wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
+
+.login-card {
+  background: rgba(255,255,255,0.95);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 15px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgot {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.forgot a {
+  font-size: 13px;
+  color: #16a34a;
+  text-decoration: none;
+}
+
+.switch {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch a {
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* =========================
-   STATIC CONTENT PAGES FIX
+   STATIC PAGES
    About / Privacy / Terms / Contact
    ========================= */
-
 .static-page {
   min-height: 100vh;
   background:
@@ -238,5 +292,6 @@ footer {
 
 .static-page .features {
   background: rgba(255,255,255,0.95);
+  color: #111;
   border-radius: 18px;
 }

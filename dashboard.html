@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Boost Your Social Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+<!-- TOP BAR -->
+<header class="dash-header">
+  <div class="dash-logo">Boost Your Social Media</div>
+  <div class="dash-user">
+    <span>Hello, User</span>
+    <a href="login.html">Logout</a>
+  </div>
+</header>
+
+<div class="dash-container">
+
+  <!-- LEFT: USERS LIST -->
+  <section class="users-section">
+    <h3>Support Other Creators</h3>
+
+    <!-- USER A -->
+    <div class="user-card">
+      <div class="user-info">
+        <strong>User A</strong>
+        <p>YouTube • TikTok • Facebook</p>
+      </div>
+      <!-- ADDED -->
+      <button onclick="supportUser(1)">Support Now</button>
+    </div>
+
+    <!-- USER B -->
+    <div class="user-card">
+      <div class="user-info">
+        <strong>User B</strong>
+        <p>YouTube • Instagram</p>
+      </div>
+      <!-- ADDED -->
+      <button onclick="supportUser(2)">Support Now</button>
+    </div>
+
+    <!-- USER C -->
+    <div class="user-card">
+      <div class="user-info">
+        <strong>User C</strong>
+        <p>TikTok • Facebook</p>
+      </div>
+      <!-- ADDED -->
+      <button onclick="supportUser(3)">Support Now</button>
+    </div>
+
+  </section>
+
+  <!-- RIGHT: NOTIFICATIONS -->
+  <aside class="notify-section">
+    <h3>Notifications</h3>
+
+    <div class="notify-card success">
+      <p><strong>User A</strong> supported you.</p>
+      <small>Waiting for your follow-back (48h)</small>
+    </div>
+
+    <div class="notify-card warning">
+      <p>Follow-back pending</p>
+      <small>24 hours remaining</small>
+    </div>
+
+    <div class="notify-card info">
+      <p>Proof verified successfully</p>
+      <small>Task completed</small>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- SUPPORT REQUEST SCRIPT (ADDED) -->
+<script>
+  function supportUser(targetId){
+    let formData = new FormData();
+    formData.append("target_id", targetId);
+
+    fetch("api/support/create.php",{
+      method:"POST",
+      body: formData
+    })
+    .then(res => res.text())
+    .then(() => {
+      // support page එකට යනවා
+      window.location.href = "support.html";
+    });
+<script>
+  // example: support created time (from backend later)
+  // for now demo value
+  const supportCreatedAt = new Date("2025-01-01T10:00:00"); 
+
+  const now = new Date();
+  const hoursPassed = (now - supportCreatedAt) / (1000 * 60 * 60);
+
+  if (hoursPassed >= 48) {
+    document.getElementById("complaintBtn").style.display = "inline-block";
+  }
+</script>
+
+</body>
+</html>

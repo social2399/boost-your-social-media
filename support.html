@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Support Creator | Boost Your Social Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+<!-- HEADER -->
+<header class="dash-header">
+  <div class="dash-logo">Boost Your Social Media</div>
+  <div class="dash-user">
+    <span>Hello, User</span>
+    <a href="dashboard.html">Back</a>
+  </div>
+</header>
+
+<div class="support-container">
+
+  <!-- TARGET USER INFO -->
+  <div class="support-user-card">
+    <h3>Support: User B</h3>
+    <p>Please follow / subscribe the platforms below</p>
+
+    <div class="platforms">
+      <a href="#" target="_blank">YouTube Channel</a>
+      <a href="#" target="_blank">TikTok Profile</a>
+      <a href="#" target="_blank">Facebook Page</a>
+    </div>
+  </div>
+
+  <!-- UPLOAD PROOF -->
+  <div class="proof-card">
+    <h3>Upload Screenshot Proof</h3>
+
+    <!-- FORM UPDATED -->
+    <form id="proofForm" enctype="multipart/form-data">
+
+      <label>YouTube Screenshot</label>
+      <input type="file" name="screenshot" required>
+
+      <!-- hidden fields -->
+      <input type="hidden" name="request_id" value="1">
+      <input type="hidden" name="type" value="support">
+
+      <button type="submit">Submit Proof</button>
+
+    </form>
+  </div>
+
+</div>
+
+<!-- UPLOAD SCRIPT (ADDED) -->
+<script>
+  document.getElementById("proofForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    let response = await fetch("api/support/upload-proof.php",{
+      method: "POST",
+      body: formData
+    });
+
+    let result = await response.text();
+    alert(result);
+
+    if(result === "uploaded"){
+      window.location.href = "dashboard.html";
+    }
+  });
+</script>
+
+</body>
+</html>

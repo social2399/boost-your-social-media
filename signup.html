@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | Boost Your Social Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="signup-bg">
+
+  <div class="signup-wrapper">
+    <div class="signup-card">
+
+      <h2>Create Your Account</h2>
+      <p class="subtitle">Join our real creator support community</p>
+
+      <form>
+
+        <!-- First / Last Name -->
+        <div class="row">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Last Name" required>
+        </div>
+
+        <!-- Nickname / Email -->
+        <div class="row">
+          <input type="text" placeholder="Nickname" required>
+          <input type="email" placeholder="Email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="row">
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+        </div>
+
+        <!-- Social link -->
+        <input type="url" class="full" placeholder="Enter your social media link" required>
+
+        <!-- Rule checkbox -->
+        <label class="checkbox">
+          <input type="checkbox" id="rules" onchange="toggleSignup()">
+          No payment required • 48-hour follow-back rule
+        </label>
+
+        <button type="submit" id="signupBtn" disabled>Sign Up</button>
+
+      </form>
+
+      <p class="switch">
+        Have an account?
+        <a href="login.html">Login now.</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleSignup() {
+      document.getElementById("signupBtn").disabled =
+        !document.getElementById("rules").checked;
+    }
+  </script>
+
+</body>
+</html>

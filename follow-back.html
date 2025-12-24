@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Follow Back | Boost Your Social Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-bg">
+
+<!-- HEADER -->
+<header class="dash-header">
+  <div class="dash-logo">Boost Your Social Media</div>
+  <div class="dash-user">
+    <span>Hello, User</span>
+    <a href="dashboard.html">Back</a>
+  </div>
+</header>
+
+<div class="followback-container">
+
+  <!-- REQUEST INFO -->
+  <div class="followback-info">
+    <h3>Follow Back Request</h3>
+    <p>
+      <strong>User A</strong> has supported you.<br>
+      Please follow back within <strong>48 hours</strong>.
+    </p>
+
+    <div class="timer-box">
+      ⏳ Time remaining: <strong>36 hours</strong>
+    </div>
+  </div>
+
+  <!-- USER A SOCIAL LINKS -->
+  <div class="followback-card">
+    <h3>User A – Social Media</h3>
+
+    <div class="platforms">
+      <a href="#" target="_blank">YouTube Channel</a>
+      <a href="#" target="_blank">TikTok Profile</a>
+      <a href="#" target="_blank">Facebook Page</a>
+    </div>
+  </div>
+
+  <!-- UPLOAD PROOF -->
+  <div class="followback-proof">
+    <h3>Upload Follow-Back Proof</h3>
+
+    <!-- FORM UPDATED -->
+    <form id="followBackForm" enctype="multipart/form-data">
+
+      <label>YouTube Screenshot</label>
+      <input type="file" name="screenshot" required>
+
+      <!-- hidden backend values -->
+      <input type="hidden" name="request_id" value="1">
+      <input type="hidden" name="type" value="followback">
+
+      <button type="submit">Confirm Follow Back</button>
+
+    </form>
+  </div>
+
+</div>
+
+<!-- FOLLOW BACK SCRIPT (ADDED) -->
+<script>
+  document.getElementById("followBackForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    let response = await fetch("api/support/upload-proof.php", {
+      method: "POST",
+      body: formData
+    });
+
+    let result = await response.text();
+    alert(result);
+
+    if(result === "uploaded"){
+      window.location.href = "dashboard.html";
+    }
+  });
+</script>
+
+</body>
+</html>

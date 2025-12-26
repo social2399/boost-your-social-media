@@ -41,12 +41,19 @@ body {
   color: #ffffff;
 }
 
-.signup {
-  background: #22c55e;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 8px;
+.signup-bg {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1611162618071-b39a2ec0550d") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* =========================
    HERO (INDEX PAGE)
@@ -295,3 +302,4 @@ footer {
   color: #111;
   border-radius: 18px;
 }
+

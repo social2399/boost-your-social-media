@@ -685,3 +685,127 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   STATIC CONTENT PAGES
+   About / Privacy / Terms / Contact
+   ========================= */
+
+.static-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1611162617474-5b21e879e113");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 120px;
+}
+
+/* Content card inside static pages */
+.static-page .features {
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  border-radius: 18px;
+}
+/* =========================
+   STATIC CONTENT PAGES FIX
+   ========================= */
+
+body.static-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1611162617474-5b21e879e113");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* FIX NAVBAR VISIBILITY ON STATIC PAGES */
+body.static-page .navbar {
+  position: relative;
+  background: rgba(0,0,0,0.65);
+}
+
+/* Ensure logo & buttons visible */
+body.static-page .logo,
+body.static-page .nav-actions a {
+  color: #ffffff;
+}
+
+/* Signup button visibility */
+body.static-page .signup {
+  background: #22c55e;
+  color: #ffffff;
+}
+
+/* Content card look */
+body.static-page .features {
+  background: rgba(255,255,255,0.96);
+  color: #111;
+  border-radius: 18px;
+  max-width: 1000px;
+  margin: auto;
+}
+/* =====================================
+   HOME PAGE – FULL BACKGROUND FIX
+   ===================================== */
+
+/* Remove white breaks */
+.stats {
+  background: rgba(255,255,255,0.95);
+}
+
+.features {
+  background: rgba(0,0,0,0.6);
+  color: #ffffff;
+}
+
+/* Feature cards */
+.feature {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+}
+
+/* =====================================
+   STATIC PAGES – FORCE BACKGROUND
+   About / Privacy / Terms / Contact
+   ===================================== */
+
+body.static-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1611162617474-5b21e879e113");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Content card */
+body.static-page .features {
+  background: rgba(255,255,255,0.96);
+  color: #111;
+  border-radius: 18px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* =====================================
+   NAVBAR FIX – STATIC PAGES
+   ===================================== */
+
+body.static-page .navbar {
+  position: relative;
+  background: rgba(0,0,0,0.65);
+}
+
+body.static-page .logo,
+body.static-page .nav-actions a {
+  color: #ffffff;
+}
+
+body.static-page .signup {
+  background: #22c55e;
+  color: #ffffff;
+}
